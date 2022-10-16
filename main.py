@@ -52,8 +52,6 @@ def mainMenu():
         isBadChoise = checkBadChoise(choice, 0, 6)
         if not isBadChoise:
             return int(choice)
-        else:
-            choice = 'Govno'
     
 
 def printPhoneBook(book):
