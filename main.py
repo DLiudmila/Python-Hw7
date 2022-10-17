@@ -57,10 +57,30 @@ def mainMenu():
 def printPhoneBook(book):
     #TODO: Доделать
     print(book)
-
-def addRecord(book):
-    #TODO: Доделать
-    book.append(input("Введите данные:"))
+    
+def addRecord (book):
+    book = []
+    surname = input('Введите фамилию: ')
+    book.append(surname)
+    name = input('Введите имя: ')
+    book.append(name)
+    phone_number = ''
+    valid =False
+    while not valid:
+        try:
+            phone_number = input('Введите номер телефона: ')
+            if len(phone_number) != 11:
+                print('В номере телефона должно быть 11 цифр.')
+            else:
+                phone_number = int(phone_number)
+                valid = True
+        except:
+            print('Номер телефона должен состоять только из цифр.')
+    book.append(phone_number)
+    comment = input('Введите комментарий: ')
+    book.append(comment)
+    print('Контакт успешно добавлен')
+    return book
 
 def deleteRecord(book):
     #TODO: Доделать
