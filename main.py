@@ -56,7 +56,6 @@ def mainMenu():
 
 def printPhoneBook(book):
     #TODO: Доделать
-<<<<<<< HEAD
     header = ['Familia    ', 'Imja       ', 'Telefon    ', 'Description']
 
     for i in range(len(book)):
@@ -82,18 +81,13 @@ def printPhoneBook(book):
     # else:
     #     print("Справочник пуст!")
 
-def addRecord(book):
-    #TODO: Доделать
-    book.append(input("Введите данные:"))
-=======
-    print(book)
     
 def addRecord (book):
-    book = []
+    record = []
     surname = input('Введите фамилию: ')
-    book.append(surname)
+    record.append(surname)
     name = input('Введите имя: ')
-    book.append(name)
+    record.append(name)
     phone_number = ''
     valid =False
     while not valid:
@@ -106,13 +100,13 @@ def addRecord (book):
                 valid = True
         except:
             print('Номер телефона должен состоять только из цифр.')
-    book.append(phone_number)
+    record.append(phone_number)
     comment = input('Введите комментарий: ')
-    book.append(comment)
+    record.append(comment)
     print('\nКонтакт успешно добавлен\n')
+    book.append(record)
     #logger?
     return book
->>>>>>> eb22bd263314f60a2105ef1ad53d018d26f1604d
 
 def deleteRecord(book):
     required = input('Введите фамилию контакта, который нужно удалить')
