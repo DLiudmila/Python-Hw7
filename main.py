@@ -56,7 +56,30 @@ def mainMenu():
 
 def printPhoneBook(book):
     #TODO: Доделать
-    print(book)
+    header = ['Familia    ', 'Imja       ', 'Telefon    ', 'Description']
+
+    for i in range(len(book)):
+        print('-'*40)
+        print(' '*10, '№', i+1)
+        for j in range(len(book[0])):
+            print(header[j], ':', book[i][j])
+        print('-'*40)
+
+# data = [
+#     ["Категории", "Цена"],
+#     {"book": 58, "organization": 0, "homegum": 55, "summer": 1, "win": 85189}
+# ]
+
+# print('{0:^14}|{1:^8}'.format(*data[0]), '-' * 14 + '+' + '-' * 8,
+#       '\n'.join('{0:<14}|{1:>8}'.format(*i) for i in data[1].items()),sep='\n')
+
+    # if len(book) > 0:
+    #     print("Фамилия".center(20), "Имя".center(20), "Телефон".center(15), "Примечание".center(30))
+    #     print("-"*85)
+    #     for item in book:
+    #         print(item[0].center(20), item[1].center(20), item[2].center(15), item[3].center(30))
+    # else:
+    #     print("Справочник пуст!")
 
 def addRecord(book):
     #TODO: Доделать
@@ -77,7 +100,7 @@ def editRecord(book, recordNum):
 
 
 ###### Главная программа ######
-phoneBook = []
+phoneBook = [['Sidorov', 'Sidr', '111-22-33', 'Opisanie Sidorova']]
 while True:
     choice = mainMenu()
     if choice == 1:
