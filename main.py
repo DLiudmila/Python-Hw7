@@ -57,14 +57,42 @@ def mainMenu():
 def printPhoneBook(book):
     #TODO: Доделать
     print(book)
-
-def addRecord(book):
-    #TODO: Доделать
-    book.append(input("Введите данные:"))
+    
+def addRecord (book):
+    book = []
+    surname = input('Введите фамилию: ')
+    book.append(surname)
+    name = input('Введите имя: ')
+    book.append(name)
+    phone_number = ''
+    valid =False
+    while not valid:
+        try:
+            phone_number = input('Введите номер телефона, начиная с 8: ')
+            if len(phone_number) != 11:
+                print('В номере телефона должно быть 11 цифр.')
+            else:
+                phone_number = int(phone_number)
+                valid = True
+        except:
+            print('Номер телефона должен состоять только из цифр.')
+    book.append(phone_number)
+    comment = input('Введите комментарий: ')
+    book.append(comment)
+    print('\nКонтакт успешно добавлен\n')
+    #logger?
+    return book
 
 def deleteRecord(book):
-    #TODO: Доделать
-    True
+    required = input('Введите фамилию контакта, который нужно удалить')
+    with open(book.txt, 'r', encoding='UTF-8') as data:
+         for i in range(0, len(data)):
+            if required == data[i]:
+                del data[i]
+         if required not in data:
+                 print('Такого контакта нет')
+    print('\nКонтакт успешно удалён!\n')
+    #logger ?
 
 def getRecordNumber():
     n = 0
