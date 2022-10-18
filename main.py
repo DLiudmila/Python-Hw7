@@ -68,7 +68,7 @@ def addRecord (book):
     valid =False
     while not valid:
         try:
-            phone_number = input('Введите номер телефона: ')
+            phone_number = input('Введите номер телефона, начиная с 8: ')
             if len(phone_number) != 11:
                 print('В номере телефона должно быть 11 цифр.')
             else:
