@@ -79,12 +79,20 @@ def addRecord (book):
     book.append(phone_number)
     comment = input('Введите комментарий: ')
     book.append(comment)
-    print('Контакт успешно добавлен')
+    print('\nКонтакт успешно добавлен\n')
+    #logger?
     return book
 
 def deleteRecord(book):
-    #TODO: Доделать
-    True
+    required = input('Введите фамилию контакта, который нужно удалить')
+    with open(book.txt, 'r', encoding='UTF-8') as data:
+         for i in range(0, len(data)):
+            if required == data[i]:
+                del data[i]
+         if required not in data:
+                 print('Такого контакта нет')
+    print('\nКонтакт успешно удалён!\n')
+    #logger ?
 
 def getRecordNumber():
     n = 0
