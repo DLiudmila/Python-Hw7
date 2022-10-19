@@ -83,11 +83,11 @@ def printPhoneBook(book):
 
     
 def addRecord (book):
-    record = []
+    book = []
     surname = input('Введите фамилию: ')
-    record.append(surname)
+    book.append(surname)
     name = input('Введите имя: ')
-    record.append(name)
+    book.append(name)
     phone_number = ''
     valid =False
     while not valid:
@@ -100,24 +100,23 @@ def addRecord (book):
                 valid = True
         except:
             print('Номер телефона должен состоять только из цифр.')
-    record.append(phone_number)
+    book.append(phone_number)
     comment = input('Введите комментарий: ')
-    record.append(comment)
+    book.append(comment)
     print('\nКонтакт успешно добавлен\n')
-    book.append(record)
-    #logger?
+    #logger.number_logger(f"Добавили контакт: {surname}")
     return book
 
 def deleteRecord(book):
     required = input('Введите фамилию контакта, который нужно удалить')
-    with open(book.txt, 'r', encoding='UTF-8') as data:
-         for i in range(0, len(data)):
-            if required == data[i]:
-                del data[i]
-         if required not in data:
-                 print('Такого контакта нет')
-    print('\nКонтакт успешно удалён!\n')
-    #logger ?
+    for i in range(0, len(book)):
+        if required == book[i]:
+            del book[i]
+            print('\nКонтакт успешно удалён!\n')
+            # logger.number_logger(f"Удалили контакт: {surname}")
+    if required not in book:
+        print('Такого контакта нет')
+
 
 def getRecordNumber():
     n = 0
