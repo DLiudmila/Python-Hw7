@@ -1,21 +1,10 @@
-# Формат файла "phoneBook.format2":
-# Фамилия1
-# Имя1
-# Телефон1
-# Описание1
-
-# Фамилия2
-# Имя2
-# Телефон2
-# Описание2
+import ui
 
 def readFormat2():
-    # читает файл с именем "phoneBook.format2", 
-    # возращает список списков вида (("фамилия1", "имя1", "телефон1", "описание1"), ("фамилия2", "имя2", "телефон2", "описание2")...)
-    return phoneBook
+    file = 'phoneBook.txt'
+    return open(file).read().split('\n')
 
-def saveFormat2(phoneBook):
-    # Сохраняет переданный список вида (("фамилия1", "имя1", "телефон1", "описание1"), ("фамилия2", "имя2", "телефон2", "описание2")...)
-    # в файл с именем "phoneBook.format2"
-    # ничего не возвращает
-    return
+def saveFormat2():
+    file = 'phoneBook.txt'
+    with open (file, 'a', encoding = 'utf-8') as data:
+        data.write(f'Фамилия: {book[record][0]}\n\nИмя: {book[record][1]}\n\nНомер телефона: {book[record][2]}\n\nОписание: {book[record][3]}\n\n\n')
