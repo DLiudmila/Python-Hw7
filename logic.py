@@ -1,6 +1,7 @@
 import ui
 import format1
 import format2
+import format3
 
 def mainProgram():
 ###### Главная программа ######
@@ -15,7 +16,8 @@ def mainProgram():
                 phoneBook = format1.readFormat1()
             if format == 2:
                 phoneBook = format2.readFormat2()
-
+            if format == 3:
+                phoneBook = format3.read()
 
         elif choice == 2:
             # Вывести записи справочника на экран
@@ -40,7 +42,9 @@ def mainProgram():
             if format == 1:
                 format1.saveFormat1(phoneBook)
             if format == 2:
-                format2.saveFormat2(phoneBook)
+                format3.saveFormat2(phoneBook)
+            if format == 3:
+                format3.save(phoneBook)
         
         elif choice == 0:
             break
