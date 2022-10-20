@@ -12,8 +12,9 @@ def getFormat():
         print("Допустимые форматы:")
         print("1. format1")
         print("2. format2")
+        print("3. format3")
         choice = input("Выберете формат:")
-        isBadChoise = logic.checkBadChoise(choice, 1, 2)
+        isBadChoise = logic.checkBadChoise(choice, 1, 3)
         if not isBadChoise:
             return int(choice)
 
