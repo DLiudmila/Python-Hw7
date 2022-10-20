@@ -1,10 +1,24 @@
 import ui
 
 def readFormat2():
-    file = 'phoneBook.txt'
-    return open(file).read().split('\n')
+    f1 = open('phoneBook.txt', 'r')
+    lst = f1.readline()
+    phoneBook = []
+    while len(lst) > 0:
+        record = lst.split(';')
+        phoneBook.append(record)
+        lst = f1.readline()
 
-def saveFormat2():
-    file = 'phoneBook.txt'
-    with open (file, 'a', encoding = 'utf-8') as data:
-        data.write(f'Фамилия: {book[record][0]}\n\nИмя: {book[record][1]}\n\nНомер телефона: {book[record][2]}\n\nОписание: {book[record][3]}\n\n\n')
+    return phoneBook
+
+def saveFormat2(phoneBook):
+    f2 = open('phoneBook.txt', 'w')
+    for record in range(len(phoneBook)):
+        for item in range(len(phoneBook[record])):
+            f2.write(str(phoneBook[record][item]))
+            if item != len(phoneBook[record])-1:
+                f2.write(';')
+        if record != len(phoneBook)-1:
+            f2.write('\n')
+    f2.write('\n')
+    f2.close()

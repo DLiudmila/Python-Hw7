@@ -42,7 +42,7 @@ def mainProgram():
             if format == 1:
                 format1.saveFormat1(phoneBook)
             if format == 2:
-                format3.saveFormat2(phoneBook)
+                format2.saveFormat2(phoneBook)
             if format == 3:
                 format3.save(phoneBook)
         
