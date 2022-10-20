@@ -8,6 +8,15 @@ import re
 def read():
     # читает файл с именем "phoneBook.format3", 
     # возращает список списков вида (("фамилия1", "имя1", "телефон1", "описание1"), ("фамилия2", "имя2", "телефон2", "описание2")...)
+
+    f1 = open('phoneBook.format3', 'r')
+    lst = f1.readline()
+    phoneBook = []
+    while len(lst) > 0:
+        record = lst.split(';')
+        phoneBook.append(record)
+        lst = f1.readline()
+
     return phoneBook
 
 def save(phoneBook):
@@ -18,7 +27,7 @@ def save(phoneBook):
     f2 = open('phoneBook.format3', 'w')
     for record in range(len(phoneBook)):
         for item in range(len(phoneBook[record])):
-            f2.write(phoneBook[record][item])
+            f2.write(str(phoneBook[record][item]))
             if item != len(phoneBook[record])-1:
                 f2.write(';')
         if record != len(phoneBook)-1:
