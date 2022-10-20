@@ -1,14 +1,11 @@
-# Формат файла "phoneBook.format1":
-# Фамилия1;Имя1;Телефон1;Описание1
-# Фамилия2;Имя2;Телефон2;Описание2
+from ui import addRecord
+info = addRecord
 
 def readFormat1():
-    # читает файл с именем "phoneBook.format1", 
-    # возращает список списков вида (("фамилия1", "имя1", "телефон1", "описание1"), ("фамилия2", "имя2", "телефон2", "описание2")...)
-    return phoneBook
+        file = 'phoneBook.csv'
+        return open(file).read().split('\n')
 
-def saveFormat1(phoneBook):
-    # Сохраняет переданный список вида (("фамилия1", "имя1", "телефон1", "описание1"), ("фамилия2", "имя2", "телефон2", "описание2")...)
-    # в файл с именем "phoneBook.format1"
-    # ничего не возвращает
-    return
+def saveFormat1():
+    file = 'phoneBook.csv'
+    with open (file, 'w', encoding = 'utf-8') as data:
+        data.write(f'Фамилия: {info[0]}, Имя: {info[1]}, Номер телефона: {info[2]}, Описание: {info[3]}\n')
