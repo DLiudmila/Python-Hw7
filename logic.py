@@ -30,10 +30,8 @@ def mainProgram():
             ui.deleteRecord(phoneBook) 
 
         elif choice == 5:
-            # Запросить номер записи для редактирования
-            recordNumber = ui.getRecordNumber(phoneBook)
             # Редактировать запись
-            ui.editRecord(phoneBook, recordNumber) 
+            ui.editRecord(phoneBook) 
 
         elif choice == 6:
             # Спросить в какой формат сохранить
