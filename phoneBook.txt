@@ -1,9 +1,21 @@
-Фамилия1
-Имя1
-Телефон1
-Описание1
+Sidorov
+Sidr
+111-22-33
+Opisanie Sidorova
 
-Фамилия2
-Имя2
-Телефон2
-Описание2
+Yakovlev 
+Yakov
+89076543210
+123
+Belov
+Viktor
+89876878909
+frend
+Alekseev
+Alex
+87654758960
+Sosed
+Igorev
+Igor
+87654567890
+Neznakomez
