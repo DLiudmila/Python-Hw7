@@ -10,11 +10,10 @@ def getFormat():
             print('!!!', 'Не допустимое значение - ' + str(choice), "!!!")
             isBadChoise = False
         print("Допустимые форматы:")
-        print("1. format1")
-        print("2. format2")
-        print("3. format3")
+        print("1. CSV")
+        print("2. TXT")
         choice = input("Выберете формат:")
-        isBadChoise = logic.checkBadChoise(choice, 1, 3)
+        isBadChoise = logic.checkBadChoise(choice, 1, 2)
         if not isBadChoise:
             return int(choice)
 

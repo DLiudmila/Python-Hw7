@@ -1,11 +1,9 @@
 import ui
-import format1
-import format2
-import format3
+import file
 
 def mainProgram():
 ###### Главная программа ######
-    phoneBook = [['Sidorov', 'Sidr', '111-22-33', 'Opisanie Sidorova']]
+    phoneBook = []
     while True:
         choice = ui.mainMenu()
         if choice == 1:
@@ -13,11 +11,9 @@ def mainProgram():
             format = ui.getFormat()
             # Прочитать файл выбранного формата
             if format == 1:
-                phoneBook = format1.readFormat1()
+                phoneBook = file.readCsv()
             if format == 2:
-                phoneBook = format2.readFormat2()
-            if format == 3:
-                phoneBook = format3.read()
+                phoneBook = file.readTxt()
 
         elif choice == 2:
             # Вывести записи справочника на экран
@@ -40,11 +36,9 @@ def mainProgram():
             format = ui.getFormat()
             # Сохранить файл
             if format == 1:
-                format1.saveFormat1(phoneBook)
+                file.saveCsv(phoneBook)
             if format == 2:
-                format2.saveFormat2(phoneBook)
-            if format == 3:
-                format3.save(phoneBook)
+                file.saveTxt(phoneBook)
         
         elif choice == 0:
             break
